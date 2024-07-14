@@ -1,0 +1,19 @@
+
+#include <iostream>
+#include <string>
+#include <exprtk.hpp>
+
+int main() {
+    std::string expression;
+    std::cout << "Enter a math expression: ";
+    std::getline(std::cin, expression);
+
+    exprtk::parser<double> parser;
+    parser.compile(expression);
+
+    double result = parser.evaluate();
+
+    std::cout << "Result: " << result << std::endl;
+
+    return 0;
+}
